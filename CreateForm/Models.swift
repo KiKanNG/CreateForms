@@ -7,6 +7,7 @@ enum CellType: Int {
     case MultiSelectionCheckbox = 3
     case TimeDateSelector = 4
     case Signature = 5
+    case YesNo = 6
 }
 
 enum DateSelector: Int {
@@ -45,6 +46,11 @@ class Cell: Codable {
     convenience init(type: CellType, description: String, descriptionId: String, options: Dictionary<String, String>, repeatable: Bool = false, nullable: Bool = true) {
         if type != .Checkbox && type != .MultiSelectionCheckbox { abort() }
         self.init(type: type, description: description, descriptionId: descriptionId, data: options, unit: .none, repeatable: repeatable, nullable: nullable)
+    }
+    /**    for YesNo Cell Type */
+    convenience init(type: CellType, description: String, descriptionId: String, option: Dictionary<String, String>, repeatable: Bool = false, nullable: Bool = true) {
+        if type != .YesNo { abort() }
+        self.init(type: type, description: description, descriptionId: descriptionId, data: option, unit: .none, repeatable: repeatable, nullable: nullable)
     }
     
     /**    for ShortInput, LongInput Cell Type */

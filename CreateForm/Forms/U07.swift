@@ -20,8 +20,8 @@ func U07() -> Form {
     }
     
     do {
-        let section = Section(title: "Remarks", titleId: "")
-        section.addCell(Cell(type: .LongInput, description: "", descriptionId: "", placeholder: "input your remarks here", unit: .none))
+        let section = Section(title: "Remarks", titleId: "remarks")
+        section.addCell(Cell(type: .LongInput, description: "Remarks", descriptionId: "remarks", placeholder: "input your remarks here", unit: .none))
         form.addSection(section)
     }
     

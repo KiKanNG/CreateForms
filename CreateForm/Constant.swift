@@ -4,9 +4,11 @@ struct Choices {
     static let normal = ["1": "Normal", "2": "Abnormal", "3": "N/A"]
     static let yes = ["1": "Yes", "2": "No"]
     static let twoOptionsOkFailed = ["1": "OK", "2": "Fail"]
+    static let twoOptionsOkNotOk = ["1": "OK", "2": "Not OK"]
     static let threeOptionsOkFailed = ["1": "OK", "2": "Fail", "3": "N/A"]
     static let threeOptionsOkNotOk = ["1": "OK", "2": "Not OK", "3": "N/A"]
     static let agree = ["1": "agreed", "2": "Not agreed"]
+    static let onOff = ["1": "On", "2": "Off"]
 }
 
 enum Unit: String {

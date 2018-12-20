@@ -10,6 +10,16 @@ import Foundation
 
 func U06() -> Form {
     let form = Form(id: "U06", title: "Battery Monitoring Preventive Maintenance")
+    
+    do {
+        let section = Section(title: "Basic information", titleId: "basic_information")
+        section.addCell(Cell(type: .TimeDateSelector, description: "Date of service", descriptionId: "date", dateType: .Date))
+        section.addCell(Cell(type: .ShortInput, description: "No. of control units", descriptionId: "no_of_control_units", placeholder: "", unit: .none))
+        section.addCell(Cell(type: .ShortInput, description: "Unit No.", descriptionId: "unit_no", placeholder: "", unit: .none))
+        form.addSection(section)
+    }
+    
+    
     do {
         let section = Section(title: "Inspection status", titleId: "inspection_status")
         section.addCell(Cell(type: .YesNo, description: "Inspection for broken, damaged burned components or cable", descriptionId: "inspection_for_broken", option: Choices.twoOptionsOkNotOk))
@@ -28,15 +38,15 @@ func U06() -> Form {
     }
     do {
         let section = Section(title: "Battery", titleId: "battery", repeatable: true)
-        section.addCell(Cell(type: .ShortInput, description: "Strings No.", descriptionId: "measurement_time", placeholder: "", unit: .minute))
-        section.addCell(Cell(type: .ShortInput, description: "Battery No.", descriptionId: "measurement_dc_voltage", placeholder: "", unit: .volt))
-        section.addCell(Cell(type: .ShortInput, description: "Voltage", descriptionId: "measurement_dc_current", placeholder: "", unit: .ampere))
-        section.addCell(Cell(type: .ShortInput, description: "mOhmic/Siemens", descriptionId: "measurement_alarm,", placeholder: "", unit: .none))
+        section.addCell(Cell(type: .ShortInput, description: "Strings No.", descriptionId: "string_no", placeholder: "", unit: .minute))
+        section.addCell(Cell(type: .ShortInput, description: "Battery No.", descriptionId: "battery_no", placeholder: "", unit: .volt))
+        section.addCell(Cell(type: .ShortInput, description: "Voltage", descriptionId: "volt", placeholder: "", unit: .ampere))
+        section.addCell(Cell(type: .ShortInput, description: "mOhmic/Siemens", descriptionId: "mohmic_siemens", placeholder: "", unit: .none))
     }
     do {
         let section = Section(title: "Battery", titleId: "battery", repeatable: true)
-        section.addCell(Cell(type: .ShortInput, description: "Voltage", descriptionId: "monitoring_alarm,", placeholder: "", unit: .none))
-        section.addCell(Cell(type: .ShortInput, description: "mOhmic/Siemens", descriptionId: "monitoring_alarm,", placeholder: "", unit: .none))
+        section.addCell(Cell(type: .ShortInput, description: "Voltage", descriptionId: "volt", placeholder: "", unit: .none))
+        section.addCell(Cell(type: .ShortInput, description: "mOhmic/Siemens", descriptionId: "mohmic_siemens", placeholder: "", unit: .none))
         form.addSection(section)
     }
 

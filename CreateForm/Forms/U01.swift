@@ -75,7 +75,7 @@ func U01() -> Form {
     }
     
     do {
-        let section = Section(title: "Battery Discharge Test", titleId: "")
+        let section = Section(title: "Battery Discharge Test", titleId: "battery_discharge_test")
         section.addCell(Cell(type: .Checkbox, description: "Agreed by customer", descriptionId: "agreed_by_cutomer", options: Choices.agree))
         section.addCell(Cell(type: .Signature, description: "Customer Signature", descriptionId: "customer_signature", showSavedSig: false))
         section.addCell(Cell(type: .ShortInput, description: "Battery discharge voltage", descriptionId: "battery_discharge_volt", placeholder: "", unit: .volt))

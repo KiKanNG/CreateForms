@@ -12,6 +12,14 @@ func U12() -> Form {
     let form = Form(id: "U12", title: "PDU Preventive Maintenance")
     
     do {
+        let section = Section(title: "Basic information", titleId: "basic_information")
+        section.addCell(Cell(type: .TimeDateSelector, description: "Date of service", descriptionId: "date", dateType: .Date))
+        section.addCell(Cell(type: .ShortInput, description: "Rating (kVA)", descriptionId: "rating_kVA", placeholder: "", unit: .kilovoltAmps))
+        section.addCell(Cell(type: .ShortInput, description: "Unit No.", descriptionId: "unit_no", placeholder: "", unit: .kilovoltAmps))
+        
+        form.addSection(section)
+    }
+    do {
         let section = Section(title: "Visual Inspection Status", titleId: "visual_inspection_status")
         section.addCell(Cell(type: .Checkbox, description: "Inspection for broken, damaged burned components or cable", descriptionId: "inspection_for_broken", options: Choices.twoOptionsOkNotOk))
         section.addCell(Cell(type: .Checkbox, description: "Verify the equipment ventilation is normal", descriptionId: "verify_the_equipment", options: Choices.twoOptionsOkNotOk))
@@ -58,10 +66,10 @@ func U12() -> Form {
             do {
                 let sectionId = "branch_circuit_display\(i)_\(sectionIds[pos])"
                 let section = Section(title: "Branch Circuit Display Status: ID \(i)-\(header)", titleId: sectionId)
-                section.addCell(Cell(type: .ShortInput, description: "Rating", descriptionId: "", placeholder: "", unit: .none))
-                section.addCell(Cell(type: .ShortInput, description: "Type", descriptionId: "", placeholder: "", unit: .none))
-                section.addCell(Cell(type: .Checkbox, description: "Status", descriptionId: "", options: Choices.onOff))
-                section.addCell(Cell(type: .ShortInput, description: "Reading", descriptionId: "", placeholder: "", unit: .ampere))
+                section.addCell(Cell(type: .ShortInput, description: "Rating", descriptionId: "rating", placeholder: "", unit: .none))
+                section.addCell(Cell(type: .ShortInput, description: "Type", descriptionId: "type", placeholder: "", unit: .none))
+                section.addCell(Cell(type: .Checkbox, description: "Status", descriptionId: "status", options: Choices.onOff))
+                section.addCell(Cell(type: .ShortInput, description: "Reading", descriptionId: "reading", placeholder: "", unit: .ampere))
                 
                 form.addSection(section)
             }

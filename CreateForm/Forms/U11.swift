@@ -12,6 +12,17 @@ func U11() -> Form {
     let form = Form(id: "U11", title: "Static Transfer Switch Preventive Maintenance")
     
     do {
+        let section = Section(title: "Basic information", titleId: "basic_information")
+        section.addCell(Cell(type: .ShortInput, description: "Phone no.", descriptionId: "phone_no", placeholder: "", unit: .none))
+        section.addCell(Cell(type: .TimeDateSelector, description: "Date of service", descriptionId: "date", dateType: .Date))
+        section.addCell(Cell(type: .ShortInput, description: "Rating (kw)", descriptionId: "rating_kw", placeholder: "", unit: .kilovolt))
+        section.addCell(Cell(type: .ShortInput, description: "Rating (kVA)", descriptionId: "rating_kVA", placeholder: "", unit: .kilovoltAmps))
+        section.addCell(Cell(type: .ShortInput, description: "Battery", descriptionId: "battery", placeholder: "", unit: .kilovoltAmps))
+        
+        form.addSection(section)
+    }
+    
+    do {
         let section = Section(title: "Visual Inspection Status", titleId: "visual_inspection_status")
         section.addCell(Cell(type: .Checkbox, description: "Inspection for broken, damaged burned components or cable", descriptionId: "inspection_for_broken", options: Choices.threeOptionsOkNotOk))
         section.addCell(Cell(type: .Checkbox, description: "Verify the equipment ventilation is normal", descriptionId: "verify_the_equipment", options: Choices.threeOptionsOkNotOk))

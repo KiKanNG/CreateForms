@@ -10,6 +10,14 @@ import Foundation
 
 func U10() -> Form {
     let form = Form(id: "U10", title: "Transformer Perventive Maintenance")
+    
+    do {
+        let section = Section(title: "Basic information", titleId: "basic_information")
+        section.addCell(Cell(type: .TimeDateSelector, description: "Date of service", descriptionId: "date", dateType: .Date))
+        section.addCell(Cell(type: .ShortInput, description: "Rating", descriptionId: "rating", placeholder: "", unit: .none))
+        form.addSection(section)
+    }
+    
     do {
         let section = Section(title: "Visual Inspection Status", titleId: "visual_inspection_status")
         section.addCell(Cell(type: .YesNo, description: "Inspection for broken, damaged burned components or cable", descriptionId: "inspection_for_broken", option: Choices.twoOptionsOkNotOk))
@@ -33,7 +41,7 @@ func U10() -> Form {
         
     }
     do {
-        let section = Section(title: "Transformer Output reading", titleId: "tranformer_input_reading")
+        let section = Section(title: "Transformer Output reading", titleId: "tranformer_output_reading")
         section.addCell(Cell(type: .ShortInput, description: "Voltage L1-N", descriptionId: "voltage_l1_n", placeholder: "", unit: .volt))
         section.addCell(Cell(type: .ShortInput, description: "Voltage L2-N", descriptionId: "voltage_l2_n", placeholder: "", unit: .volt))
         section.addCell(Cell(type: .ShortInput, description: "Voltage L3-N", descriptionId: "voltage_l3_n", placeholder: "", unit: .volt))

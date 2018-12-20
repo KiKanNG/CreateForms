@@ -48,9 +48,9 @@ func U04() -> Form {
     
     do {
         let section = Section(title: "Recording the measurement", titleId: "recording_the_measurement")
-        section.addCell(Cell(type: .ShortInput, description: "L1-L2", descriptionId: "l1-l2", placeholder: "", unit: .volt))
-        section.addCell(Cell(type: .ShortInput, description: "L1-L3", descriptionId: "l1-l3", placeholder: "", unit: .volt))
-        section.addCell(Cell(type: .ShortInput, description: "L2-L3", descriptionId: "l2-l3", placeholder: "", unit: .volt))
+        section.addCell(Cell(type: .ShortInput, description: "L1-L2", descriptionId: "l1_l2", placeholder: "", unit: .volt))
+        section.addCell(Cell(type: .ShortInput, description: "L1-L3", descriptionId: "l1_l3", placeholder: "", unit: .volt))
+        section.addCell(Cell(type: .ShortInput, description: "L2-L3", descriptionId: "l2_l3", placeholder: "", unit: .volt))
         
         section.addCell(Cell(type: .ShortInput, description: "L1-N", descriptionId: "l1n", placeholder: "", unit: .volt))
         section.addCell(Cell(type: .ShortInput, description: "L2-N", descriptionId: "l2n", placeholder: "", unit: .volt))
@@ -65,13 +65,13 @@ func U04() -> Form {
     }
     
     do {
-        let section = Section(title: "", titleId: "")
-        section.addCell(Cell(type: .Checkbox, description: "Performance normal, no problem found (if not please verify)", descriptionId: "", options: Choices.yes))
+        let section = Section(title: "Performance", titleId: "performance")
+        section.addCell(Cell(type: .Checkbox, description: "Performance normal, no problem found (if not please verify)", descriptionId: "performance_normal", options: Choices.yes))
         form.addSection(section)
     }
     
     do {
-        let section = Section(title: "Remarks / comments", titleId: "")
+        let section = Section(title: "Remarks / comments", titleId: "remarks_comments")
         section.addCell(Cell(type: .LongInput, description: "Remarks", descriptionId: "remarks", placeholder: "input your remarks here", unit: .none))
         form.addSection(section)
     }

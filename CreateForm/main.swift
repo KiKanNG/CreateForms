@@ -1,7 +1,7 @@
 import Foundation
 
 func main() {
-    let form = U12()
+    let form = C01()
     
     do {
         let jsonData = try JSONEncoder().encode(form)

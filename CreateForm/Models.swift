@@ -54,9 +54,10 @@ class Cell: Codable {
     }
     
     /**    for ShortInput, LongInput Cell Type */
-    convenience init(type: CellType, description: String, descriptionId: String, placeholder: String, unit: Unit, repeatable: Bool = false, nullable: Bool = true) {
+    convenience init(type: CellType, description: String, descriptionId: String, placeholder: String, unit: Unit, isNumber: Bool = true, repeatable: Bool = false, nullable: Bool = true) {
         if type != .ShortInput && type != .LongInput { abort() }
-        self.init(type: type, description: description, descriptionId: descriptionId, data: ["data": placeholder], unit: unit, repeatable: repeatable, nullable: nullable)
+        let isNumberString: String = isNumber ? "1" : "0"
+        self.init(type: type, description: description, descriptionId: descriptionId, data: ["data": placeholder, "isNumber": isNumberString], unit: unit, repeatable: repeatable, nullable: nullable)
     }
     
     /**    for TimeDateSelector Cell Type */
@@ -78,14 +79,17 @@ class Section: Codable {
     var title: String
     var titleId: String
     var repeatable: Bool
+    var maxRepeat: Int
     var cells: [Cell]
-    
-    init(title: String, titleId: String, repeatable: Bool = false) {
+
+    // inf is represent as -1
+    init(title: String, titleId: String, repeatable: Bool = false, maxRepeat: Int = -1) {
         self.id = "0-0"
         self.sequence = 0
         self.title = title
         self.titleId = titleId
         self.repeatable = repeatable
+        self.maxRepeat = maxRepeat
         self.cells = []
     }
     
@@ -107,7 +111,7 @@ class Form: Codable {
         self.title = title
         self.content = []
     }
-    
+
     func addSection(_ section: Section) {
         let s = section
         s.sequence = content.count + 1

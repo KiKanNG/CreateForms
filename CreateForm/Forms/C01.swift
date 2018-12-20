@@ -12,7 +12,7 @@ func C01() -> Form {
     let form = Form(id: "C01", title: "Preventive Maintenance Report of CRAR System")
     
     do {
-        let section = Section(title: "Check List", titleId: "")
+        let section = Section(title: "Check List", titleId: "check_list")
         section.addCell(Cell(type: .Checkbox, description: "Expansion valve operation", descriptionId: "expansion_valve_operation", options: Choices.normal))
         section.addCell(Cell(type: .Checkbox, description: "Cooling valve operation", descriptionId: "cooling_valve_operation", options: Choices.normal))
         section.addCell(Cell(type: .Checkbox, description: "Temperature sensor", descriptionId: "temperature_sensor", options: Choices.normal))
@@ -32,7 +32,7 @@ func C01() -> Form {
     }
     
     do {
-        let section = Section(title: "Records", titleId: "")
+        let section = Section(title: "Records", titleId: "record")
         section.addCell(Cell(type: .ShortInput, description: "Supply air temperature", descriptionId: "supply_air_temperature", placeholder: "", unit: .celsius))
         section.addCell(Cell(type: .ShortInput, description: "Return air temperature", descriptionId: "return_air_temperature", placeholder: "", unit: .celsius))
         section.addCell(Cell(type: .ShortInput, description: "Supply air RH", descriptionId: "supply_air_rh", placeholder: "", unit: .percent))

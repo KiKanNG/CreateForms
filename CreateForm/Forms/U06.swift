@@ -37,14 +37,14 @@ func U06() -> Form {
         form.addSection(section)
     }
     do {
-        let section = Section(title: "Battery", titleId: "battery", repeatable: true)
+        let section = Section(title: "Battery Measurement", titleId: "battery_measurement", repeatable: true)
         section.addCell(Cell(type: .ShortInput, description: "Strings No.", descriptionId: "string_no", placeholder: "", unit: .minute))
         section.addCell(Cell(type: .ShortInput, description: "Battery No.", descriptionId: "battery_no", placeholder: "", unit: .volt))
         section.addCell(Cell(type: .ShortInput, description: "Voltage", descriptionId: "volt", placeholder: "", unit: .ampere))
         section.addCell(Cell(type: .ShortInput, description: "mOhmic/Siemens", descriptionId: "mohmic_siemens", placeholder: "", unit: .none))
     }
     do {
-        let section = Section(title: "Battery", titleId: "battery", repeatable: true)
+        let section = Section(title: "Battery Monitoring", titleId: "battery_monitoring", repeatable: true)
         section.addCell(Cell(type: .ShortInput, description: "Voltage", descriptionId: "volt", placeholder: "", unit: .none))
         section.addCell(Cell(type: .ShortInput, description: "mOhmic/Siemens", descriptionId: "mohmic_siemens", placeholder: "", unit: .none))
         form.addSection(section)

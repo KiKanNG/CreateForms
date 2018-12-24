@@ -12,7 +12,7 @@ func C09() -> Form {
     let form = Form(id: "C09", title: "Preventive Maintenance Report of Sensaphone System")
     
     do {
-        let section = Section(title: "", titleId: "")
+        let section = Section(title: "Check list", titleId: "check_list")
         section.addCell(Cell(type: .YesNo, description: "Check the unit backup function", descriptionId: "check_the_unit_backup_function", option: Choices.threeOptionsOkFailed))
         section.addCell(Cell(type: .YesNo, description: "Check the internal sensor function", descriptionId: "check_the_internal_sensor_function", option: Choices.threeOptionsOkFailed))
         section.addCell(Cell(type: .YesNo, description: "Check the dial-out function", descriptionId: "check_the_dial_out_function", option: Choices.threeOptionsOkFailed))

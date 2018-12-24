@@ -14,7 +14,7 @@ func C10() -> Form {
     
     do {
         let section = Section(title: "Control Panel", titleId: "control_panel")
-        section.addCell(Cell(type: .Checkbox, description: "General condition of panels, cover, and name plates", descriptionId: "general_condition", options: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "General condition of panels, cover, and name plates", descriptionId: "general_condition", option: Choices.normal))
         
         form.addSection(section)
     }

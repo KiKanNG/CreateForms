@@ -43,7 +43,7 @@ func C03() -> Form {
     
     do {
         let section = Section(title: "Performance", titleId: "performance")
-        section.addCell(Cell(type: .Checkbox, description: "Performance normal, no problem found (if not please verify)", descriptionId: "performance_normal", options: Choices.yes))
+        section.addCell(Cell(type: .YesNo, description: "Performance normal, no problem found (if not please verify)", descriptionId: "performance_normal", option: Choices.yes))
         form.addSection(section)
     }
     

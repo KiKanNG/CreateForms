@@ -19,7 +19,8 @@ func C01() -> Form {
         section.addCell(Cell(type: .Checkbox, description: "Condensate drip", descriptionId: "condensate_drip", options: Choices.normal))
         section.addCell(Cell(type: .Checkbox, description: "Components cleaning", descriptionId: "components_cleaning", options: Choices.normal))
         section.addCell(Cell(type: .Checkbox, description: "Filter cleaning", descriptionId: "filter_cleaning", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Auto changeover function", descriptionId: "auto_Changeover_function", options: Choices.normal))
+        section.addCell(Cell(type: .Checkbox, description: "Condenser cleaning", descriptionId: "condenser_cleaning", options: Choices.normal))
+        section.addCell(Cell(type: .Checkbox, description: "Auto changeover function", descriptionId: "auto_changeover_function", options: Choices.normal))
         section.addCell(Cell(type: .Checkbox, description: "Humidifier water supply", descriptionId: "humidifier_water_supply", options: Choices.normal))
         section.addCell(Cell(type: .Checkbox, description: "Cooling function test", descriptionId: "humidifier_function_test", options: Choices.normal))
         section.addCell(Cell(type: .Checkbox, description: "Fan operation", descriptionId: "fan_operation", options: Choices.normal))
@@ -32,7 +33,7 @@ func C01() -> Form {
     }
     
     do {
-        let section = Section(title: "Records", titleId: "record")
+        let section = Section(title: "Records", titleId: "records")
         section.addCell(Cell(type: .ShortInput, description: "Supply air temperature", descriptionId: "supply_air_temperature", placeholder: "", unit: .celsius))
         section.addCell(Cell(type: .ShortInput, description: "Return air temperature", descriptionId: "return_air_temperature", placeholder: "", unit: .celsius))
         section.addCell(Cell(type: .ShortInput, description: "Supply air RH", descriptionId: "supply_air_rh", placeholder: "", unit: .percent))
@@ -59,8 +60,8 @@ func C01() -> Form {
         section.addCell(Cell(type: .ShortInput, description: "Supply fan - 2 Current (L1)", descriptionId: "supply_fan_2_current_l1", placeholder: "", unit: .volt))
         section.addCell(Cell(type: .ShortInput, description: "Supply fan - 2 Current (L2)", descriptionId: "supply_fan_2_current_l2", placeholder: "", unit: .volt))
         section.addCell(Cell(type: .ShortInput, description: "Supply fan - 2 Current (L3)", descriptionId: "supply_fan_2_current_l3", placeholder: "", unit: .volt))
-        section.addCell(Cell(type: .ShortInput, description: "Heating steps - 1 Current (L1)", descriptionId: "supply_fan_1_current_l1", placeholder: "", unit: .volt))
-        section.addCell(Cell(type: .ShortInput, description: "Heating steps - 1 Current (L2)", descriptionId: "supply_fan_1_current_l2", placeholder: "", unit: .volt))
+        section.addCell(Cell(type: .ShortInput, description: "Heating steps - 1 Current (L1)", descriptionId: "heating_steps_1_current_l1", placeholder: "", unit: .volt))
+        section.addCell(Cell(type: .ShortInput, description: "Heating steps - 1 Current (L2)", descriptionId: "heating_steps_1_current_l2", placeholder: "", unit: .volt))
         section.addCell(Cell(type: .ShortInput, description: "Heating steps - 1 Current (L3)", descriptionId: "heating_steps_1_current_l3", placeholder: "", unit: .volt))
         section.addCell(Cell(type: .ShortInput, description: "Heating steps - 2 Current (L1)", descriptionId: "heating_steps_2_current_l1", placeholder: "", unit: .volt))
         section.addCell(Cell(type: .ShortInput, description: "Heating steps - 2 Current (L2)", descriptionId: "heating_steps_2_current_l2", placeholder: "", unit: .volt))

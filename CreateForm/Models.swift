@@ -8,6 +8,7 @@ enum CellType: Int {
     case TimeDateSelector = 4
     case Signature = 5
     case YesNo = 6
+    case OnOff = 7
 }
 
 enum DateSelector: Int {
@@ -53,6 +54,11 @@ class Cell: Codable {
     convenience init(type: CellType, description: String, descriptionId: String, option: Dictionary<String, String>, repeatable: Bool = false, maxRepeat: Int = -1, nullable: Bool = true) {
         if type != .YesNo { abort() }
         self.init(type: type, description: description, descriptionId: descriptionId, data: option, unit: .none, repeatable: repeatable, maxRepeat: maxRepeat, nullable: nullable)
+    }
+    /**    for OnOff Cell Type */
+    convenience init(type: CellType, description: String, descriptionId: String, twoOption: Dictionary<String, String>, repeatable: Bool = false, maxRepeat: Int = -1, nullable: Bool = true) {
+        if type != .OnOff { abort() }
+        self.init(type: type, description: description, descriptionId: descriptionId, data: twoOption, unit: .none, repeatable: repeatable, maxRepeat: maxRepeat, nullable: nullable)
     }
     
     /**    for ShortInput, LongInput Cell Type */

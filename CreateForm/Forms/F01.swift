@@ -14,24 +14,24 @@ func F01() -> Form {
     
     do {
         let section = Section(title: "Check smoke alarm panel operating condition", titleId: "check_smoke_alarm_panel_operating_condition")
-        section.addCell(Cell(type: .Checkbox, description: "All bell horn and warning signal are operating properly", descriptionId: "All_bell_born_properly", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "The abort switch (i.r Lock-off unit) is functioning correctly", descriptionId: "the_switch_is_functioning", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Pressure reading the gas cylinder", descriptionId: "pressure_reading", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Check any leakage from the cylinder valve (Bubble test)", descriptionId: "bubble_test", options: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "All bell horn and warning signal are operating properly", descriptionId: "All_bell_born_properly", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "The abort switch (i.r Lock-off unit) is functioning correctly", descriptionId: "the_switch_is_functioning", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Pressure reading the gas cylinder", descriptionId: "pressure_reading", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Check any leakage from the cylinder valve (Bubble test)", descriptionId: "bubble_test", option: Choices.normal))
         
         form.addSection(section)
     }
     do {
         let section = Section(title: "Check and ensure that fire alarm panel operation correctly", titleId: "check_fire_alarm_panel")
-        section.addCell(Cell(type: .Checkbox, description: "Signals feeding back to fire panel", descriptionId: "signals_feeding_back", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Battery operation condition", descriptionId: "battery_operation_condition", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Maintained proper connection", descriptionId: "maintained_proper_connection", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Auto mode", descriptionId: "auto_mode", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Manual mode", descriptionId: "manual_mode", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "System fault", descriptionId: "system_fault", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Power supply condition", descriptionId: "power_supply_condition", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Buzzer and silence push button are operation properly", descriptionId: "buzzer_silence_push_button", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Put system back into operation", descriptionId: "put_system_back", options: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Signals feeding back to fire panel", descriptionId: "signals_feeding_back", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Battery operation condition", descriptionId: "battery_operation_condition", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Maintained proper connection", descriptionId: "maintained_proper_connection", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Auto mode", descriptionId: "auto_mode", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Manual mode", descriptionId: "manual_mode", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "System fault", descriptionId: "system_fault", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Power supply condition", descriptionId: "power_supply_condition", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Buzzer and silence push button are operation properly", descriptionId: "buzzer_silence_push_button", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Put system back into operation", descriptionId: "put_system_back", option: Choices.normal))
         
         form.addSection(section)
     }

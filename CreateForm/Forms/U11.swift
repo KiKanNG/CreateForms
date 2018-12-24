@@ -24,10 +24,10 @@ func U11() -> Form {
     
     do {
         let section = Section(title: "Visual Inspection Status", titleId: "visual_inspection_status")
-        section.addCell(Cell(type: .Checkbox, description: "Inspection for broken, damaged burned components or cable", descriptionId: "inspection_for_broken", options: Choices.threeOptionsOkNotOk))
-        section.addCell(Cell(type: .Checkbox, description: "Verify the equipment ventilation is normal", descriptionId: "verify_the_equipment", options: Choices.threeOptionsOkNotOk))
-        section.addCell(Cell(type: .Checkbox, description: "Inspection for cleaniness of cable connections", descriptionId: "inspection_for_cleaniness", options: Choices.threeOptionsOkNotOk))
-        section.addCell(Cell(type: .Checkbox, description: "General cleaning of the accessible and de-energized area of the equipment", descriptionId: "general_cleaning", options: Choices.threeOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "Inspection for broken, damaged burned components or cable", descriptionId: "inspection_for_broken", option: Choices.threeOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "Verify the equipment ventilation is normal", descriptionId: "verify_the_equipment", option: Choices.threeOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "Inspection for cleaniness of cable connections", descriptionId: "inspection_for_cleaniness", option: Choices.threeOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "General cleaning of the accessible and de-energized area of the equipment", descriptionId: "general_cleaning", option: Choices.threeOptionsOkNotOk))
         
         form.addSection(section)
     }

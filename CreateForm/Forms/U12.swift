@@ -21,11 +21,11 @@ func U12() -> Form {
     }
     do {
         let section = Section(title: "Visual Inspection Status", titleId: "visual_inspection_status")
-        section.addCell(Cell(type: .Checkbox, description: "Inspection for broken, damaged burned components or cable", descriptionId: "inspection_for_broken", options: Choices.twoOptionsOkNotOk))
-        section.addCell(Cell(type: .Checkbox, description: "Verify the equipment ventilation is normal", descriptionId: "verify_the_equipment", options: Choices.twoOptionsOkNotOk))
-        section.addCell(Cell(type: .Checkbox, description: "Check alarm log and history records", descriptionId: "check_alarm_log", options: Choices.twoOptionsOkNotOk))
-        section.addCell(Cell(type: .Checkbox, description: "General cleaning of the accessible and de-energized area of the equipment", descriptionId: "general_cleaning", options: Choices.twoOptionsOkNotOk))
-        section.addCell(Cell(type: .Checkbox, description: "PDU operation status", descriptionId: "pdu_operation_status", options: Choices.twoOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "Inspection for broken, damaged burned components or cable", descriptionId: "inspection_for_broken", option: Choices.twoOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "Verify the equipment ventilation is normal", descriptionId: "verify_the_equipment", option: Choices.twoOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "Check alarm log and history records", descriptionId: "check_alarm_log", option: Choices.twoOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "General cleaning of the accessible and de-energized area of the equipment", descriptionId: "general_cleaning", option: Choices.twoOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "PDU operation status", descriptionId: "pdu_operation_status", option: Choices.twoOptionsOkNotOk))
         
         form.addSection(section)
     }
@@ -58,30 +58,43 @@ func U12() -> Form {
         form.addSection(section)
     }
     
-    for i in 1...28 {
-        let sectionIds = ["l1", "l2", "l3"]
-        let sectionHeaders = ["L1", "L2", "L3"]
-        
-        for (pos, header) in sectionHeaders.enumerated() {
-            do {
-                let sectionId = "branch_circuit_display\(i)_\(sectionIds[pos])"
-                let section = Section(title: "Branch Circuit Display Status: ID \(i)-\(header)", titleId: sectionId)
-                section.addCell(Cell(type: .ShortInput, description: "Rating", descriptionId: "rating", placeholder: "", unit: .none))
-                section.addCell(Cell(type: .ShortInput, description: "Type", descriptionId: "type", placeholder: "", unit: .none))
-                section.addCell(Cell(type: .Checkbox, description: "Status", descriptionId: "status", options: Choices.onOff))
-                section.addCell(Cell(type: .ShortInput, description: "Reading", descriptionId: "reading", placeholder: "", unit: .ampere))
-                
-                form.addSection(section)
-            }
-        }
-    }
-    
-    
+//    for i in 1...28 {
+//        let sectionIds = ["l1", "l2", "l3"]
+//        let sectionHeaders = ["L1", "L2", "L3"]
+//
+//        for (pos, header) in sectionHeaders.enumerated() {
+//            do {
+//                let sectionId = "branch_circuit_display\(i)_\(sectionIds[pos])"
+//                let section = Section(title: "Branch Circuit Display Status: ID \(i)-\(header)", titleId: sectionId)
+//                section.addCell(Cell(type: .ShortInput, description: "Rating", descriptionId: "rating", placeholder: "", unit: .none))
+//                section.addCell(Cell(type: .ShortInput, description: "Type", descriptionId: "type", placeholder: "", unit: .none))
+//                section.addCell(Cell(type: .OnOff, description: "Status", descriptionId: "status", options: Choices.onOff))
+//                section.addCell(Cell(type: .ShortInput, description: "Reading", descriptionId: "reading", placeholder: "", unit: .ampere))
+//
+//                form.addSection(section)
+//            }
+//        }
+//    }
     do {
-        let section = Section(title: "Additional Remarks", titleId: "additional_remarks")
-        section.addCell(Cell(type: .LongInput, description: "Remarks", descriptionId: "remarks", placeholder: "input your remarks here", unit: .none))
+        let section = Section(title: "Branch Circuit Display Status", titleId: "branch_circuit_display_status", repeatable : true, maxRepeat: 14 )
+        section.addCell(Cell(type: .ShortInput, description: "Rating (L1)", descriptionId: "rating_l1", placeholder: "", unit: .none))
+        section.addCell(Cell(type: .ShortInput, description: "Type(L1)", descriptionId: "type_l1", placeholder: "", unit: .none))
+        section.addCell(Cell(type: .OnOff, description: "Status(L1)", descriptionId: "status_l1", twoOption: Choices.onOff))
+        section.addCell(Cell(type: .ShortInput, description: "Reading(L1)", descriptionId: "reading_l1", placeholder: "", unit: .ampere))
+        
+        section.addCell(Cell(type: .ShortInput, description: "Rating(L2)", descriptionId: "rating_l2", placeholder: "", unit: .none))
+        section.addCell(Cell(type: .ShortInput, description: "Type(L2)", descriptionId: "type_l2", placeholder: "", unit: .none))
+        section.addCell(Cell(type: .OnOff, description: "Status(L2)", descriptionId: "status_l2", twoOption: Choices.onOff))
+        section.addCell(Cell(type: .ShortInput, description: "Reading(L2)", descriptionId: "reading_l2", placeholder: "", unit: .ampere))
+        
+        section.addCell(Cell(type: .ShortInput, description: "Rating(L3)", descriptionId: "rating_l3", placeholder: "", unit: .none))
+        section.addCell(Cell(type: .ShortInput, description: "Type(L3)", descriptionId: "type_l3", placeholder: "", unit: .none))
+        section.addCell(Cell(type: .OnOff, description: "Status(L3)", descriptionId: "status_l3", twoOption: Choices.onOff))
+        section.addCell(Cell(type: .ShortInput, description: "Reading(L3)", descriptionId: "reading_l3", placeholder: "", unit: .ampere))
         form.addSection(section)
     }
+    
+
     
     return form
 }

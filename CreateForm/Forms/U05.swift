@@ -29,7 +29,7 @@ func U05() -> Form {
             form.addSection(section)
         }
         do {
-            let section = Section(title: "Check List", titleId: "check_list", repeatable: true)
+            let section = Section(title: "Check List", titleId: "check_list", repeatable: true, maxRepeat: 22)
             section.addCell(Cell(type: .ShortInput, description: "Time (Min)", descriptionId: "time", placeholder: "", unit: .minute))
             section.addCell(Cell(type: .ShortInput, description: "DC voltage (Vdc)", descriptionId: "dc_voltage", placeholder: "", unit: .volt))
             section.addCell(Cell(type: .ShortInput, description: "DC current (Adc)", descriptionId: "dc_current", placeholder: "", unit: .ampere))

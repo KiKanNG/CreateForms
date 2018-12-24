@@ -24,10 +24,10 @@ func U03() -> Form {
 
     do {
         let section = Section(title: "Visual Inspection Status", titleId: "visual_inspection_status")
-        section.addCell(Cell(type: .Checkbox, description: "Inspection for broken, damaged burned componemts or cable", descriptionId: "inspection_for_broken", options: Choices.threeOptionsOkNotOk))
-        section.addCell(Cell(type: .Checkbox, description: "Verify the equipment ventilation is normal", descriptionId: "verify_the_equipment", options: Choices.threeOptionsOkNotOk))
-        section.addCell(Cell(type: .Checkbox, description: "Inspection for integrity of battery rack/cabinet", descriptionId: "inspection_for_integrity", options: Choices.threeOptionsOkNotOk))
-        section.addCell(Cell(type: .Checkbox, description: "General cleaning of the accessible and de-engergized area of the equipment", descriptionId: "general_cleaning", options: Choices.threeOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "Inspection for broken, damaged burned componemts or cable", descriptionId: "inspection_for_broken", option: Choices.threeOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "Verify the equipment ventilation is normal", descriptionId: "verify_the_equipment", option: Choices.threeOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "Inspection for integrity of battery rack/cabinet", descriptionId: "inspection_for_integrity", option: Choices.threeOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "General cleaning of the accessible and de-engergized area of the equipment", descriptionId: "general_cleaning", option: Choices.threeOptionsOkNotOk))
         
         form.addSection(section)
     }
@@ -53,17 +53,17 @@ func U03() -> Form {
     
     do {
         let section = Section(title: "Battery Discharge Test", titleId: "battery_discharge_test")
-        section.addCell(Cell(type: .Checkbox, description: "Agreed by customer", descriptionId: "agreed_by_customer", options: Choices.agree))
-        section.addCell(Cell(type: .Signature, description: "Customer Signature", descriptionId: "customer_signature", showSavedSig: false))
-        section.addCell(Cell(type: .Checkbox, description: "Running as normal", descriptionId: "running_normal", options: Choices.twoOptionsOkFailed))
+        section.addCell(Cell(type: .YesNo, description: "Agreed by customer", descriptionId: "agreed_by_customer", option: Choices.agree))
+        section.addCell(Cell(type: .YesNo, description: "Running as normal", descriptionId: "running_normal", option: Choices.twoOptionsOkFailed))
         section.addCell(Cell(type: .ShortInput, description: "Time taken", descriptionId: "time_taken", placeholder: "", unit: .minute))
         
         form.addSection(section)
     }
-    
-    for index in 1...5 {
-        let section = Section(title: "Output Status (UMP \(index))", titleId: "output_status_\(index)")
-        
+
+
+    do {
+        let section = Section(title: "Output Status (UMP)", titleId: "output_status", repeatable : true, maxRepeat: 5 )
+
         section.addCell(Cell(type: .ShortInput, description: "Voltage L1-N (L1-L2)", descriptionId: "voltage_l1n", placeholder: "", unit: .volt))
         section.addCell(Cell(type: .ShortInput, description: "Voltage L2-N (L2-L3)", descriptionId: "voltage_l2n", placeholder: "", unit: .volt))
         section.addCell(Cell(type: .ShortInput, description: "Voltage L3-N (L1-L3)", descriptionId: "voltage_l3n", placeholder: "", unit: .volt))
@@ -83,7 +83,7 @@ func U03() -> Form {
         section.addCell(Cell(type: .ShortInput, description: "Real power (L3)", descriptionId: "real_power_l3", placeholder: "", unit: .kilovolt))
         
         section.addCell(Cell(type: .ShortInput, description: "Load percetage", descriptionId: "load_percetage", placeholder: "", unit: .percent))
-        section.addCell(Cell(type: .Checkbox, description: "Float charger (common battery)", descriptionId: "float_charge", options: Choices.twoOptionsOkFailed))
+        section.addCell(Cell(type: .YesNo, description: "Float charger (common battery)", descriptionId: "float_charge", option: Choices.twoOptionsOkFailed))
         section.addCell(Cell(type: .ShortInput, description: "Voltage", descriptionId: "voltage", placeholder: "", unit: .volt))
         section.addCell(Cell(type: .ShortInput, description: "Current", descriptionId: "current", placeholder: "", unit: .ampere))
         section.addCell(Cell(type: .ShortInput, description: "Battery runtime (min)", descriptionId: "battery_runtime", placeholder: "", unit: .minute))
@@ -92,7 +92,7 @@ func U03() -> Form {
     }
     
     do {
-        let section = Section(title: "Battery voltage sample measurement", titleId: "battery_volt_sample_measurement", repeatable: true)
+        let section = Section(title: "Battery voltage sample measurement", titleId: "battery_volt_sample_measurement", repeatable: true , maxRepeat: 3)
         section.addCell(Cell(type: .ShortInput, description: "Cell no.", descriptionId: "cell_no", placeholder: "", unit: .none))
         section.addCell(Cell(type: .ShortInput, description: "Volt", descriptionId: "volt", placeholder: "", unit: .volt))
         

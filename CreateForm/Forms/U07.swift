@@ -21,11 +21,17 @@ func U07() -> Form {
         form.addSection(section)
     }
     
-    for index in 1...50 {
-        let section = Section(title: "Cell No.: \(index)", titleId: "cell_no_\(index)")
+//    for index in 1...50 {
+//        let section = Section(title: "Cell No.: \(index)", titleId: "cell_no_\(index)")
+//        section.addCell(Cell(type: .ShortInput, description: "DC", descriptionId: "dc", placeholder: "", unit: .volt))
+//        section.addCell(Cell(type: .ShortInput, description: "m", descriptionId: "m", placeholder: "", unit: .ohm))
+//
+//        form.addSection(section)
+//    }
+    do {
+        let section = Section(title: "Cell No.", titleId: "cell_no", repeatable : true, maxRepeat: 50 )
         section.addCell(Cell(type: .ShortInput, description: "DC", descriptionId: "dc", placeholder: "", unit: .volt))
         section.addCell(Cell(type: .ShortInput, description: "m", descriptionId: "m", placeholder: "", unit: .ohm))
-        
         form.addSection(section)
     }
     

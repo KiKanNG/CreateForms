@@ -21,16 +21,19 @@ func U08() -> Form {
         form.addSection(section)
 
     }
-    for index in 1...50 {
-        let section = Section(title: "String A Cell No.: \(index)", titleId: "string_a_cell_no_\(index)")
-        section.addCell(Cell(type: .ShortInput, description: "DC (V)", descriptionId: "dc", placeholder: "", unit: .volt))
-        
+    do {
+        let section = Section(title: "String A Cell No", titleId: "string_a_cell_no", repeatable : true, maxRepeat: 50 )
+       section.addCell(Cell(type: .ShortInput, description: "DC (V)", descriptionId: "dc", placeholder: "", unit: .volt))
         form.addSection(section)
-}
-    for index in 1...50 {
-        let section = Section(title: "String B Cell No.: \(index)", titleId: "string_b_cell_no_\(index)")
+    }
+    do {
+        let section = Section(title: "String B Cell No", titleId: "string_b_cell_no", repeatable : true, maxRepeat: 50 )
         section.addCell(Cell(type: .ShortInput, description: "DC (V)", descriptionId: "dc", placeholder: "", unit: .volt))
-        
+        form.addSection(section)
+    }
+    do {
+        let section = Section(title: "Remarks", titleId: "remarks")
+        section.addCell(Cell(type: .LongInput, description: "Remarks", descriptionId: "remarks", placeholder: "input your remarks here", unit: .none))
         form.addSection(section)
     }
 

@@ -13,11 +13,11 @@ func C09() -> Form {
     
     do {
         let section = Section(title: "", titleId: "")
-        section.addCell(Cell(type: .Checkbox, description: "Check the unit backup function", descriptionId: "check_the_unit_backup_function", options: Choices.threeOptionsOkFailed))
-        section.addCell(Cell(type: .Checkbox, description: "Check the internal sensor function", descriptionId: "check_the_internal_sensor_function", options: Choices.threeOptionsOkFailed))
-        section.addCell(Cell(type: .Checkbox, description: "Check the dial-out function", descriptionId: "check_the_dial_out_function", options: Choices.threeOptionsOkFailed))
-        section.addCell(Cell(type: .Checkbox, description: "Check the dial-in function", descriptionId: "check_the_dial_in_function", options: Choices.threeOptionsOkFailed))
-        section.addCell(Cell(type: .Checkbox, description: "Check the network communication function", descriptionId: "check_the_network_communication_function", options: Choices.threeOptionsOkFailed))
+        section.addCell(Cell(type: .YesNo, description: "Check the unit backup function", descriptionId: "check_the_unit_backup_function", option: Choices.threeOptionsOkFailed))
+        section.addCell(Cell(type: .YesNo, description: "Check the internal sensor function", descriptionId: "check_the_internal_sensor_function", option: Choices.threeOptionsOkFailed))
+        section.addCell(Cell(type: .YesNo, description: "Check the dial-out function", descriptionId: "check_the_dial_out_function", option: Choices.threeOptionsOkFailed))
+        section.addCell(Cell(type: .YesNo, description: "Check the dial-in function", descriptionId: "check_the_dial_in_function", option: Choices.threeOptionsOkFailed))
+        section.addCell(Cell(type: .YesNo, description: "Check the network communication function", descriptionId: "check_the_network_communication_function", option: Choices.threeOptionsOkFailed))
 
         form.addSection(section)
     }
@@ -26,7 +26,7 @@ func C09() -> Form {
         let section = Section(title: "Channel", titleId: "channel")
         for channel in 1...8 {
             section.addCell(Cell(type: .ShortInput, description: "Channel \(channel)", descriptionId: "channel_\(channel)", placeholder: "", unit: .none))
-            section.addCell(Cell(type: .Checkbox, description: "The sensor function properly", descriptionId: "the_sensor_function_properly_\(channel)", options: Choices.threeOptionsOkFailed))
+            section.addCell(Cell(type: .YesNo, description: "The sensor function properly", descriptionId: "the_sensor_function_properly_\(channel)", option: Choices.threeOptionsOkFailed))
         }
         form.addSection(section)
     }

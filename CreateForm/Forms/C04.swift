@@ -12,7 +12,7 @@ func C04() -> Form {
     let form = Form(id: "C04", title: "Preventive Maintenance Report of Fan Coil Units")
     
     do {
-        let section = Section(title: "Check List", titleId: "check_list", repeatable: true)
+        let section = Section(title: "Check List", titleId: "check_list", repeatable: true, maxRepeat: 20)
         section.addCell(Cell(type: .ShortInput, description: "Unit no.", descriptionId: "unit_no", placeholder: "", unit: .none))
         section.addCell(Cell(type: .ShortInput, description: "Location", descriptionId: "location", placeholder: "", unit: .none))
         section.addCell(Cell(type: .ShortInput, description: "Supply air temp.", descriptionId: "supply_air_temp", placeholder: "", unit: .celsius))

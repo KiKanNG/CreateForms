@@ -24,10 +24,10 @@ func U01() -> Form {
     
     do {
         let section = Section(title: "Visual Inspection Status", titleId: "visual_inspection_status")
-        section.addCell(Cell(type: .Checkbox, description: "Inspection for broken, damaged burned componemts or cable", descriptionId: "inspection_for_broken", options: Choices.threeOptionsOkNotOk))
-        section.addCell(Cell(type: .Checkbox, description: "Verify the equipment ventilation is normal", descriptionId: "verify_the_equipment", options: Choices.threeOptionsOkNotOk))
-        section.addCell(Cell(type: .Checkbox, description: "Inspection for integrity of battery rack/cabinet", descriptionId: "inspection_for_integrity", options: Choices.threeOptionsOkNotOk))
-        section.addCell(Cell(type: .Checkbox, description: "General cleaning of the accessible and de-engergized area of the equipment", descriptionId: "general_cleaning", options: Choices.threeOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "Inspection for broken, damaged burned componemts or cable", descriptionId: "inspection_for_broken", option: Choices.threeOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "Verify the equipment ventilation is normal", descriptionId: "verify_the_equipment", option: Choices.threeOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "Inspection for integrity of battery rack/cabinet", descriptionId: "inspection_for_integrity", option: Choices.threeOptionsOkNotOk))
+        section.addCell(Cell(type: .YesNo, description: "General cleaning of the accessible and de-engergized area of the equipment", descriptionId: "general_cleaning", option: Choices.threeOptionsOkNotOk))
         
         form.addSection(section)
     }
@@ -76,18 +76,17 @@ func U01() -> Form {
     
     do {
         let section = Section(title: "Battery Discharge Test", titleId: "battery_discharge_test")
-        section.addCell(Cell(type: .Checkbox, description: "Agreed by customer", descriptionId: "agreed_by_cutomer", options: Choices.agree))
-        section.addCell(Cell(type: .Signature, description: "Customer Signature", descriptionId: "customer_signature", showSavedSig: false))
+        section.addCell(Cell(type: .YesNo, description: "Agreed by customer", descriptionId: "agreed_by_cutomer", option: Choices.agree))
         section.addCell(Cell(type: .ShortInput, description: "Battery discharge voltage", descriptionId: "battery_discharge_volt", placeholder: "", unit: .volt))
         section.addCell(Cell(type: .ShortInput, description: "Battery discharge current", descriptionId: "battery_discharge_current", placeholder: "", unit: .ampere))
-        section.addCell(Cell(type: .Checkbox, description: "Running as normal", descriptionId: "runnung_normal", options: Choices.twoOptionsOkFailed))
+        section.addCell(Cell(type: .YesNo, description: "Running as normal", descriptionId: "runnung_normal", option: Choices.twoOptionsOkFailed))
         section.addCell(Cell(type: .ShortInput, description: "Time taken", descriptionId: "time_taken", placeholder: "", unit: .minute))
         
         form.addSection(section)
     }
     
     do {
-        let section = Section(title: "Battery voltage sample measurement", titleId: "battery_volt_sample_measurement", repeatable: true)
+        let section = Section(title: "Battery voltage sample measurement", titleId: "battery_volt_sample_measurement", repeatable: true , maxRepeat: 3)
         section.addCell(Cell(type: .ShortInput, description: "Cell no.", descriptionId: "cell_no", placeholder: "", unit: .none))
         section.addCell(Cell(type: .ShortInput, description: "Volt", descriptionId: "volt", placeholder: "", unit: .volt))
         

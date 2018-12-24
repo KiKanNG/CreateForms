@@ -19,29 +19,29 @@ func U04() -> Form {
     
     do {
         let section = Section(title: "Main Switchboard", titleId: "main_switchboard")
-        section.addCell(Cell(type: .Checkbox, description: "General condition including panels, door and nameplates", descriptionId: "general_condition", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Instrumentation & Indication check all meter reading", descriptionId: "instrumentation_check", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Main electrical supply voltage", descriptionId: "main_electrical_supply_voltage", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Main electrical supply current", descriptionId: "main_electrical_supply_current", options: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "General condition including panels, door and nameplates", descriptionId: "general_condition", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Instrumentation & Indication check all meter reading", descriptionId: "instrumentation_check", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Main electrical supply voltage", descriptionId: "main_electrical_supply_voltage", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Main electrical supply current", descriptionId: "main_electrical_supply_current", option: Choices.normal))
         
         form.addSection(section)
     }
     
     do {
         let section = Section(title: "Sub-board", titleId: "subboard")
-        section.addCell(Cell(type: .Checkbox, description: "General condition including panels, door and nameplates", descriptionId: "general_condition", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "MCB-RCD condition (visual check) for PDUs and DB board", descriptionId: "mcbrcd_condition", options: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "General condition including panels, door and nameplates", descriptionId: "general_condition", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "MCB-RCD condition (visual check) for PDUs and DB board", descriptionId: "mcbrcd_condition", option: Choices.normal))
         
         form.addSection(section)
     }
     
     do {
         let section = Section(title: "Electrical Appliances & Fittings", titleId: "electrical_appliances_fittings")
-        section.addCell(Cell(type: .Checkbox, description: "Appearance: Inspection for contamination, physical damage, loose hardware", descriptionId: "appearance", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "General condition", descriptionId: "general_condition", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Power points (visual check)", descriptionId: "power_points", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Lighting (visual check)", descriptionId: "lighting", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Switches (visual check wirings are securely mounted on the terminals)", descriptionId: "switches", options: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Appearance: Inspection for contamination, physical damage, loose hardware", descriptionId: "appearance", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "General condition", descriptionId: "general_condition", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Power points (visual check)", descriptionId: "power_points", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Lighting (visual check)", descriptionId: "lighting", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Switches (visual check wirings are securely mounted on the terminals)", descriptionId: "switches", option: Choices.normal))
         
         form.addSection(section)
     }
@@ -66,7 +66,7 @@ func U04() -> Form {
     
     do {
         let section = Section(title: "Performance", titleId: "performance")
-        section.addCell(Cell(type: .Checkbox, description: "Performance normal, no problem found (if not please verify)", descriptionId: "performance_normal", options: Choices.yes))
+        section.addCell(Cell(type: .YesNo, description: "Performance normal, no problem found (if not please verify)", descriptionId: "performance_normal", option: Choices.yes))
         form.addSection(section)
     }
     

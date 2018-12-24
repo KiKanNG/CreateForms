@@ -14,16 +14,16 @@ func C07() -> Form {
     
     do {
         let section = Section(title: "Control Panel", titleId: "control_panel")
-        section.addCell(Cell(type: .Checkbox, description: "General Condition", descriptionId: "general_condition", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Instrumentation & Indication", descriptionId: "instrumentation_indication", options: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "General Condition", descriptionId: "general_condition", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Instrumentation & Indication", descriptionId: "instrumentation_indication", option: Choices.normal))
         
         form.addSection(section)
     }
     do {
         let section = Section(title: "Condensing Water Pump", titleId: "condensing_water_Pump")
         section.addCell(Cell(type: .ShortInput, description: "Main Operation Current", descriptionId: "main_operation_current", placeholder: "", unit: .ampere))
-        section.addCell(Cell(type: .Checkbox, description: "Mechanical Seals, Alignment", descriptionId: "mechanical_seals_alignment", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Couplings and Bearings", descriptionId: "couplings_bearings", options: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Mechanical Seals, Alignment", descriptionId: "mechanical_seals_alignment", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Couplings and Bearings", descriptionId: "couplings_bearings", option: Choices.normal))
         
         form.addSection(section)
     }
@@ -31,15 +31,15 @@ func C07() -> Form {
         let section = Section(title: "Sump Pump", titleId: "sump_pump")
         section.addCell(Cell(type: .ShortInput, description: "Main Operation Current No.1", descriptionId: "main_operation_current_1", placeholder: "", unit: .ampere))
         section.addCell(Cell(type: .ShortInput, description: "Main Operation Current No.2", descriptionId: "main_operation_current_2", placeholder: "", unit: .ampere))
-        section.addCell(Cell(type: .Checkbox, description: "Condensate Drain of Water Pipe", descriptionId: "condensate_drain_of_water_pipe", options: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Condensate Drain of Water Pipe", descriptionId: "condensate_drain_of_water_pipe", option: Choices.normal))
         
         form.addSection(section)
     }
     do {
         let section = Section(title: "Chilled Water Pump", titleId: "chilled_water_pump")
         section.addCell(Cell(type: .ShortInput, description: "Main Operation Current", descriptionId: "main_operation_current", placeholder: "", unit: .ampere))
-        section.addCell(Cell(type: .Checkbox, description: "Mechanical Seals, Alignment", descriptionId: "mechanical_seals_alignment", options: Choices.normal))
-        section.addCell(Cell(type: .Checkbox, description: "Couplings and Bearings", descriptionId: "couplings_bearings", options: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Mechanical Seals, Alignment", descriptionId: "mechanical_seals_alignment", option: Choices.normal))
+        section.addCell(Cell(type: .YesNo, description: "Couplings and Bearings", descriptionId: "couplings_bearings", option: Choices.normal))
         
         form.addSection(section)
     }

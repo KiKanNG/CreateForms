@@ -13,7 +13,7 @@ func C11() -> Form {
     
     
     do {
-        let section = Section(title: "Check List", titleId: "check_list", repeatable: true)
+        let section = Section(title: "Check List", titleId: "check_list", repeatable: true, maxRepeat: 19)
         section.addCell(Cell(type: .ShortInput, description: "Unit no.", descriptionId: "unit_no", placeholder: "", unit: .none))
         section.addCell(Cell(type: .ShortInput, description: "Location", descriptionId: "location", placeholder: "", unit: .none))
         section.addCell(Cell(type: .ShortInput, description: "Check bearings noise of motor", descriptionId: "check_bearing_noise", placeholder: "", unit: .none))
